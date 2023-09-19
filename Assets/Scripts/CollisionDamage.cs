@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterDamage : MonoBehaviour
+public class CollisionDamage : MonoBehaviour
 {
     // Start is called before the first frame update
     public int damage=1;
     public DamageReceiver playerReceiver;
+    public ObjectDeletion objectDelete;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
             playerReceiver.TakeDamage(damage);
+            objectDelete.DeleteObject();
         }
     }
 }

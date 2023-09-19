@@ -10,6 +10,7 @@ public class DamageReceiver : MonoBehaviour
     private bool isInvincible = false;
     private float invicibilityDuration = 1f;
     private float invincibilityDeltaTime = 0.1f;
+    private Vector3 initScale; // Since model scale is not initScale, we use this instead
 
     public HealthModifier healthBar;
 
@@ -19,6 +20,7 @@ public class DamageReceiver : MonoBehaviour
     {
         healthBar.SetMaxHealth(maxHealth);
         currHealth = maxHealth;
+        initScale = model.transform.localScale;
     }
 
     // Update is called once per frame
@@ -42,13 +44,13 @@ public class DamageReceiver : MonoBehaviour
         // Generating multiple I-frames
         for(float i = 0; i<invicibilityDuration; i+= invincibilityDeltaTime) 
         {
-            if (model.transform.localScale == Vector3.one) ScaleModelTo(Vector3.zero); // Hiding player
-            else ScaleModelTo(Vector3.one); // Restoring player
+            if (model.transform.localScale == initScale) ScaleModelTo(Vector3.zero); // Hiding player
+            else ScaleModelTo(initScale); // Restoring player
 
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
 
-        ScaleModelTo(Vector3.one); // To prevent player disappearing with 0 scale
+        ScaleModelTo(initScale); // To prevent player disappearing with 0 scale
         isInvincible = false;
     }
 
