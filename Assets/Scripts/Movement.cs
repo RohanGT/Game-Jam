@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpSpeed = 8f;
+    private float speed = 5f;
+    private float jumpSpeed = 8f;
     private float direction = 0f;
     private Rigidbody2D player;
 
     public Transform groundCheck;
-    public float groundCheckRadius;
+    private float groundCheckRadius = 0.25f;
     public LayerMask groundLayer;
     private bool isTouchingGround;
 
