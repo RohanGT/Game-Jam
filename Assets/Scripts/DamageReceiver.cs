@@ -63,8 +63,7 @@ public class DamageReceiver : MonoBehaviour
 
         if(currHealth<= 0)
         {
-            //model.transform.Rotate(new Vector3(0, 0, 90)); // PENDING: Create another class? Probably replace with actual player so collider rotates.
-            Debug.Log("Game Over!");
+            FindObjectOfType<GameManager>().GameOver();
             return;
         }
 

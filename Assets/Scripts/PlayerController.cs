@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpSpeed = 8f;
     private float direction = 0f;
+    private float xRange = 8.56f;
     private Rigidbody2D player;
 
     public Transform groundCheck;
@@ -25,6 +26,15 @@ public class PlayerController : MonoBehaviour
     {
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         direction = Input.GetAxis("Horizontal");
+
+        if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
 
         if (direction != 0f)
         {

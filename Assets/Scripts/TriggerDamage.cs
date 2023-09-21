@@ -7,7 +7,7 @@ public class TriggerDamage : MonoBehaviour
 
     public int damage = 1;
     public DamageReceiver playerReceiver;
-    private ObjectDeletion objectDelete;
+    public ObjectDeletion objectDelete;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
