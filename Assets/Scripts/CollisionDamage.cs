@@ -8,6 +8,9 @@ public class CollisionDamage : MonoBehaviour
     public int damage=1;
     public DamageReceiver playerReceiver;
     public ObjectDeletion objectDelete;
+    public FloatingTextModifier floatingText;
+    public string textToDisplay = "";
+    private bool textDisplayed = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +18,11 @@ public class CollisionDamage : MonoBehaviour
         {
             playerReceiver.TakeDamage(damage);
             objectDelete.DeleteObject();
+            if(floatingText && !textDisplayed)
+            {
+                floatingText.ChangeText(textToDisplay);
+                textDisplayed = true;
+            }
         }
     }
 }

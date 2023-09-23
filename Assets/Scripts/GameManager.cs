@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameRunning = true;
+    public string startText = "";
+    public FloatingTextModifier playerText;
     public void GameOver()
     {
         if(gameRunning)
@@ -19,5 +21,13 @@ public class GameManager : MonoBehaviour
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Start()
+    {
+        if(playerText)
+        {
+            playerText.ChangeText(startText);
+        }
     }
 }
