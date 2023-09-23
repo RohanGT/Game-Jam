@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8f;
     private float direction = 0f;
     private float xRange = 8.56f;
+    public bool canMove = true;
     private Rigidbody2D player;
 
     public Transform groundCheck;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         direction = Input.GetAxis("Horizontal");
@@ -36,18 +37,21 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        if (direction != 0f)
+        if(canMove)
         {
-            player.velocity = new Vector2(direction * speed, player.velocity.y);
-        }
-        else
-        {
-            player.velocity = new Vector2(0, player.velocity.y);
-        }
+            if (direction != 0f)
+            {
+                player.velocity = new Vector2(direction * speed, player.velocity.y);
+            }
+            else
+            {
+                player.velocity = new Vector2(0, player.velocity.y);
+            }
 
-        if (Input.GetButtonDown("Jump") && isTouchingGround)
-        {
-            player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            if (Input.GetButtonDown("Jump") && isTouchingGround)
+            {
+                player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            }
         }
     }
 }

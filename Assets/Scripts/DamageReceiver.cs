@@ -63,6 +63,8 @@ public class DamageReceiver : MonoBehaviour
 
         if(currHealth<= 0)
         {
+            PlayerController player = model.GetComponentInParent<PlayerController>();
+            player.canMove = false;
             FindObjectOfType<GameManager>().GameOver();
             return;
         }
