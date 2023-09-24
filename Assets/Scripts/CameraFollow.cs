@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
-    //private float startX;
+    private float rangeX = 34;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (player.transform.position.x > rangeX) return;
         //float moveForward = player.transform.position.x - startX;
         if (player.transform.position.x > 0)
         {
