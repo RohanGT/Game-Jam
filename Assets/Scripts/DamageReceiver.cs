@@ -54,12 +54,13 @@ public class DamageReceiver : MonoBehaviour
         isInvincible = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, ObjectDeletion deleteObj)
     {
         if (isInvincible) return;
 
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
+        deleteObj.DeleteObject();
 
         if(currHealth<= 0)
         {

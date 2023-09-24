@@ -16,9 +16,8 @@ public class CollisionDamage : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            playerReceiver.TakeDamage(damage);
-            objectDelete.DeleteObject();
-            if(floatingText && !textDisplayed)
+            playerReceiver.TakeDamage(damage, objectDelete);
+            if (floatingText && !textDisplayed)
             {
                 floatingText.ChangeText(textToDisplay);
                 textDisplayed = true;

@@ -13,8 +13,7 @@ public class TriggerDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerReceiver.TakeDamage(damage);
-            objectDelete.DeleteObject();
+            playerReceiver.TakeDamage(damage, objectDelete);
         }
     }
 }
