@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 87.600006, y: 58.999985}
+  m_AnchoredPosition: {x: 87.60004, y: 58.99997}
   m_SizeDelta: {x: 136.05, y: 74.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433706354
@@ -1235,6 +1235,13 @@ PrefabInstance:
     - target: {fileID: 4221935254656487229, guid: 4eca91b9c3136fe479242498f452531d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561778167722536945, guid: 4eca91b9c3136fe479242498f452531d, type: 3}
+      propertyPath: m_text
+      value: 'You died
+
+
+        Restarting in 3..2..1..'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eca91b9c3136fe479242498f452531d, type: 3}
