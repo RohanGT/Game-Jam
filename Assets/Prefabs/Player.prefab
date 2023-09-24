@@ -496,6 +496,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 7
+  xRangeL: 8.56
+  xRangeR: 8.56
   canMove: 1
   groundCheck: {fileID: 4662988488297772357}
   groundCheckRadius: 0.25

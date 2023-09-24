@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpSpeed = 8f;
     private float direction = 0f;
-    public float xRange = 8.56f;
+    public float xRangeL = 8.56f;
+    public float xRangeR = 8.56f;
     public bool canMove = true;
     private Rigidbody2D player;
 
@@ -28,13 +29,13 @@ public class PlayerController : MonoBehaviour
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         direction = Input.GetAxis("Horizontal");
 
-        if (transform.position.x < -xRange)
+        if (transform.position.x < -xRangeL)
         {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xRangeL, transform.position.y, transform.position.z);
         }
-        if (transform.position.x > xRange)
+        if (transform.position.x > xRangeR)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRangeR, transform.position.y, transform.position.z);
         }
 
         if(canMove)

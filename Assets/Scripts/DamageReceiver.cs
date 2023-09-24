@@ -8,7 +8,7 @@ public class DamageReceiver : MonoBehaviour
     private int maxHealth = 100;
     private int currHealth;
     private bool isInvincible = false;
-    private float invicibilityDuration = 0.6f;
+    private float invicibilityDuration = 1f;
     private float invincibilityDeltaTime = 0.1f;
     private Vector3 initScale; // Since model scale is not initScale, we use this instead
 
