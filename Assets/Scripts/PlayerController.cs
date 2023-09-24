@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpSpeed = 8f;
     private float direction = 0f;
-    private float xRange = 8.56f;
+    public float xRange = 8.56f;
     public bool canMove = true;
     private Rigidbody2D player;
 
