@@ -1610,6 +1610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 7
+  xRange: 8.56
   canMove: 1
   groundCheck: {fileID: 487924292}
   groundCheckRadius: 0.25
@@ -2551,13 +2552,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1330089139, guid: 3281bd61e8e40d3458b20c14e541b87a, type: 3}
+      propertyPath: playerReceiver
+      value: 
+      objectReference: {fileID: 1280684571}
     - target: {fileID: 4062911086457221008, guid: 3281bd61e8e40d3458b20c14e541b87a, type: 3}
       propertyPath: m_Name
       value: Boulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062911086457221009, guid: 3281bd61e8e40d3458b20c14e541b87a, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4062911086457221020, guid: 3281bd61e8e40d3458b20c14e541b87a, type: 3}
       propertyPath: m_RootOrder

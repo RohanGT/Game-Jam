@@ -59,7 +59,10 @@ public class DamageReceiver : MonoBehaviour
 
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
-        deleteObj.DeleteObject();
+        if(deleteObj)
+        {
+            deleteObj.DeleteObject();
+        }
 
         if(currHealth<= 0)
         {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3986864889153612824}
   - component: {fileID: 881846624171402506}
   - component: {fileID: 3359502485969983153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,8 @@ MonoBehaviour:
   damage: 30
   playerReceiver: {fileID: 0}
   objectDelete: {fileID: 0}
+  floatingText: {fileID: 0}
+  textToDisplay: 
 --- !u!60 &881846624171402506
 PolygonCollider2D:
   m_ObjectHideFlags: 0
