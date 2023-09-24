@@ -6,13 +6,11 @@ using Random = UnityEngine.Random;
 public class ObjectDeletion : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject deleteParent;
     private List<GameObject> keepTrack= new List<GameObject>();
     
     void Start()
     {
-        deleteParent = GameObject.FindWithTag("DeleteParent");
-        foreach(Transform child in deleteParent.transform)
+        foreach(Transform child in gameObject.transform)
         {
             keepTrack.Add(child.gameObject);
         }
@@ -21,9 +19,12 @@ public class ObjectDeletion : MonoBehaviour
     {
         try
         {
-            int number = Random.Range(0, keepTrack.Count);
-            Destroy(keepTrack[number]);
-            keepTrack.RemoveAt(number);
+            if(keepTrack.Count > 0)
+            {
+                int number = Random.Range(0, keepTrack.Count);
+                Destroy(keepTrack[number]);
+                keepTrack.RemoveAt(number);
+            }
         }
         catch (Exception ex)
         {

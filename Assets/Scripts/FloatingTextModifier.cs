@@ -9,7 +9,7 @@ public class FloatingTextModifier : MonoBehaviour
     public void ChangeText(string txt)
     {
         gameObject.GetComponent<TMP_Text>().text = txt;
-        Invoke("ClearText", 2f);
+        Invoke("ClearText", 2.5f);
     }
 
     private void ClearText()
