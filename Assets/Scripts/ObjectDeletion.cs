@@ -7,14 +7,20 @@ public class ObjectDeletion : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameObject wallObject;
+    private GameObject deleteObject;
     private List<GameObject> keepTrack= new List<GameObject>();
-    
+    private List<GameObject> keepTrack1 = new List<GameObject>();
     void Start()
     {
         wallObject = GameObject.FindWithTag("WallObj");
         foreach(Transform child in wallObject.transform)
         {
             keepTrack.Add(child.gameObject);
+        }
+        deleteObject = GameObject.FindWithTag("DeleteObj");
+        foreach (Transform child in deleteObject.transform)
+        {
+            keepTrack1.Add(child.gameObject);
         }
     }
 
@@ -28,11 +34,11 @@ public class ObjectDeletion : MonoBehaviour
     {
         try
         {
-            int number = Random.Range(0, keepTrack.Count);
+            int number = Random.Range(0, keepTrack1.Count);
             if (col.gameObject.name == "Player")
             {
-                Destroy(keepTrack[number]);
-                keepTrack.RemoveAt(number);
+                Destroy(keepTrack1[number]);
+                keepTrack1.RemoveAt(number);
             }
         }
         catch(Exception ex)
