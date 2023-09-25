@@ -17,7 +17,7 @@ public class LevelPass : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (SceneManager.GetActiveScene().buildIndex <= 2)
+            if (SceneManager.GetActiveScene().buildIndex <= 3)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
